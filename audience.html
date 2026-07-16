@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audience View - Advanced FLL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="audience-body">
+    <div class="audience-header">
+        <img src="cavalier_logo.png" alt="Cavalier Robotics" class="logo">
+        <div class="header-titles">
+            <h1>INTRO TO FLL</h1>
+            <h2 id="aud-match-title">WAITING FOR MATCH</h2>
+        </div>
+        <img src="vortx_logo.png" alt="Vortx 3735" class="logo">
+    </div>
+
+    <div class="audience-main">
+        <div class="team-card red-border">
+            <h2 id="aud-team1-name">---</h2>
+            <div class="score-display" id="aud-team1-score">-</div>
+        </div>
+
+        <div class="timer-container">
+            <div id="aud-timer" class="massive-timer">00:00.000</div>
+        </div>
+
+        <div class="team-card blue-border">
+            <h2 id="aud-team2-name">---</h2>
+            <div class="score-display" id="aud-team2-score">-</div>
+        </div>
+    </div>
+
+    <div class="audience-footer">
+        <div class="footer-box">
+            <h3>High Score</h3>
+            <div id="aud-high-score" class="highlight-text">0</div>
+        </div>
+        <div class="footer-box">
+            <h3>Next Match</h3>
+            <div id="aud-next-match" class="highlight-text">None Scheduled</div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
