@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Intro to FLL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+    <div class="sidebar">
+        <h2>Intro to FLL</h2>
+        <nav>
+            <button class="nav-btn active" data-target="teams-page">Teams</button>
+            <button class="nav-btn" data-target="schedule-page">Schedule</button>
+            <button class="nav-btn" data-target="scoring-page">Scoring</button>
+            <button class="nav-btn" data-target="system-page">System</button>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div id="teams-page" class="page active">
+            <div class="page-header">
+                <h2>Team Management</h2>
+                <button id="save-teams-btn" class="btn primary">Save All Teams</button>
+            </div>
+            <div id="teams-container"></div>
+            <button id="add-team-btn" class="btn secondary">Add New Team</button>
+        </div>
+
+        <div id="schedule-page" class="page">
+            <div class="page-header">
+                <h2>Match Schedule</h2>
+                <button id="save-schedule-btn" class="btn primary">Save Schedule</button>
+            </div>
+            <div class="table-container">
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Match</th>
+                            <th class="red-text">Team 1</th>
+                            <th class="blue-text">Team 2</th>
+                            <th>Status</th>
+                            <th>Score</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-tbody"></tbody>
+                </table>
+            </div>
+            <button id="add-match-btn" class="btn secondary" style="margin-top: 15px;">Add Match</button>
+        </div>
+
+        <div id="scoring-page" class="page">
+            <div class="page-header">
+                <h2>Scoring & Match Control</h2>
+            </div>
+            <div class="scoring-layout">
+                <div class="match-list-pane">
+                    <h3>Available Matches</h3>
+                    <div id="scoring-match-list"></div>
+                </div>
+                <div class="active-scoring-pane">
+                    <div class="timer-section">
+                        <div id="admin-timer" class="timer-display">00:00.000</div>
+                        <div class="timer-controls">
+                            <button id="timer-start" class="btn success">Start</button>
+                            <button id="timer-pause" class="btn warning">Pause</button>
+                            <button id="timer-reset" class="btn danger">Reset</button>
+                        </div>
+                    </div>
+                    
+                    <div id="current-match-display" class="current-match-area">
+                        <p class="no-match-selected">Select a match from the left to begin scoring.</p>
+                    </div>
+
+                    <div class="scorecard-section">
+                        <h3>Reference Scorecard</h3>
+                        <img src="scorecard.jpg" alt="FLL Scorecard" class="scorecard-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="system-page" class="page">
+            <div class="page-header">
+                <h2>System Configuration</h2>
+            </div>
+            <div class="system-panel">
+                <div class="config-group">
+                    <h3>Timer Settings</h3>
+                    <label>Default Timer Duration (Minutes:Seconds):</label>
+                    <div class="time-inputs">
+                        <input type="number" id="config-mins" min="0" value="2">
+                        <span>:</span>
+                        <input type="number" id="config-secs" min="0" max="59" value="30">
+                    </div>
+                    <button id="save-config-btn" class="btn primary">Save Configuration</button>
+                </div>
+                <hr>
+                <div class="config-group">
+                    <h3>Data Management</h3>
+                    <button id="export-data-btn" class="btn secondary">Export Data (Backup)</button>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                    <button id="import-data-btn" class="btn warning">Import Data (Restore)</button>
+                </div>
+                <hr>
+                <div class="config-group">
+                    <h3>Display</h3>
+                    <button id="launch-audience-btn" class="btn success">Launch Audience Window</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
